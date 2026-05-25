@@ -1,0 +1,159 @@
+:root {
+    --primary: #bf0a30; /* Toyota Premium Red Brand Identity */
+    --success: #16a34a;
+    --danger: #dc2626;
+    --background: #f8fafc;
+    --text: #0f172a;
+    --gray-light: #cbd5e1;
+    --dark-slate: #1e293b;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    padding: 15px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.hidden { display: none !important; }
+
+/* Toyota Top Bar Layout */
+.global-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff; 
+    color: #0f172a; 
+    border-bottom: 3px solid var(--primary); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.company-logo {
+    height: 40px;
+    max-width: 150px;
+    object-fit: contain;
+}
+
+.company-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #212529;
+    letter-spacing: 0.5px;
+}
+
+.company-sub {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+}
+
+.auth-box {
+    max-width: 450px;
+    margin: 40px auto;
+    border-top: 5px solid var(--primary);
+}
+
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; margin-bottom: 6px; font-weight: 600; }
+.form-group input, .form-group select {
+    width: 100%; padding: 10px; border: 1px solid var(--gray-light);
+    border-radius: 4px; box-sizing: border-box; font-size: 15px;
+}
+
+.exam-header {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--dark-slate); color: #ffffff; padding: 12px 20px; border-radius: 6px; margin-bottom: 20px;
+}
+
+#timer-box { background: var(--danger); padding: 8px 16px; border-radius: 4px; font-size: 16px; font-weight: bold; white-space: nowrap; }
+.exam-layout { display: grid; grid-template-columns: 2.2fr 1fr; gap: 20px; }
+
+.badge {
+    display: inline-block; background: #e0f2fe; color: #0369a1;
+    padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: bold;
+}
+
+.option-btn {
+    display: block; width: 100%; text-align: left; padding: 12px 15px; margin: 10px 0;
+    border: 1px solid var(--gray-light); border-radius: 5px; background: #ffffff;
+    cursor: pointer; font-size: 15px; transition: all 0.2s ease;
+}
+.option-btn:hover { background: #f8fafc; border-color: #94a3b8; }
+.option-btn.selected { background: #dbeafe; border-color: #2563eb; color: #1e40af; font-weight: 600; }
+
+.btn { padding: 10px 20px; border: none; border-radius: 4px; background: var(--dark-slate); color: white; font-weight: bold; cursor: pointer; text-align: center; }
+.btn:hover { opacity: 0.9; }
+.btn.secondary { background: #64748b; }
+.btn.danger { background: var(--danger); }
+.btn.transparent { background: transparent; color: #475569; border: 1px solid var(--gray-light); }
+.btn.sm { padding: 6px 12px; font-size: 13px; }
+.full-width { width: 100%; box-sizing: border-box; }
+
+.nav-actions { display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid #e2e8f0; padding-top: 15px; gap: 10px; }
+
+.question-palette { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; max-height: 380px; overflow-y: auto; padding-right: 5px; }
+.palette-no { padding: 8px 0; border: 1px solid var(--gray-light); border-radius: 4px; text-align: center; cursor: pointer; font-weight: bold; font-size: 13px; }
+.palette-no.pending { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+.palette-no.attempted { background: #dcfce7; color: #166534; border-color: #86efac; }
+.palette-no.current { border: 2px solid #0f172a; box-shadow: 0 0 5px rgba(0,0,0,0.15); }
+
+.status-legend { display: flex; gap: 15px; margin-bottom: 12px; font-size: 14px; flex-wrap: wrap; }
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; }
+.dot.pending { background: #fee2e2; border: 1px solid #dc2626; }
+.dot.attempted { background: #dcfce7; border: 1px solid #16a34a; }
+
+.result-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; background: #f8fafc; padding: 15px; border-radius: 6px; font-size: 16px; }
+.table-wrapper { overflow-x: auto; margin-top: 15px; border: 1px solid var(--gray-light); border-radius: 4px; }
+table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
+th, td { padding: 10px; border: 1px solid var(--gray-light); text-align: left; white-space: nowrap; }
+th { background: #f8fafc; font-weight: bold; }
+.text-success { color: var(--success); font-weight: bold; }
+.text-danger { color: var(--danger); font-weight: bold; }
+.text-warning { color: #d97706; font-weight: bold; }
+
+.admin-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; }
+.metric-card { background: #f8fafc; border-left: 5px solid var(--dark-slate); padding: 15px; border-radius: 4px; text-align: center; }
+.metric-card h4 { margin: 0; color: #64748b; font-size: 14px; }
+.metric-card p { margin: 10px 0 0 0; font-size: 22px; font-weight: bold; color: #1e293b; }
+
+#modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); display: flex; justify-content: center; align-items: center; z-index: 1000; padding: 10px; box-sizing: border-box; }
+.modal-content { width: 100%; max-width: 900px; background: white; border-radius: 8px; padding: 20px; box-sizing: border-box; }
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 850px) {
+    .exam-layout { grid-template-columns: 1fr; }
+    .admin-metrics { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (max-width: 550px) {
+    body { padding: 8px; }
+    .global-bar { flex-direction: column; gap: 12px; text-align: center; }
+    .brand-container { flex-direction: column; gap: 5px; }
+    .exam-header { flex-direction: column; gap: 12px; text-align: center; }
+    #timer-box { width: 100%; text-align: center; }
+    .nav-actions { flex-direction: column-reverse; }
+    .nav-actions button { width: 100%; }
+    .result-meta, .admin-metrics { grid-template-columns: 1fr; }
+    .question-palette { grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); }
+}
